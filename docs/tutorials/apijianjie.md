@@ -5,11 +5,13 @@ description: Z-API是一家大模型AI中转站
 updated: 2026-08-12T22:35
 ---
 
-## 一、简介
+### 一、简介
 
 Z-API 提供 OpenAI 兼容 API，适合在 Codex、VS Code、Claude Code 等工具中使用。
 
-### 1. 价格口径
+官方地址：[https://api.zicc.cc](https://api.zicc.cc)
+
+1. 价格口径
 
 平台内采用 `1 RMB = 1 USD 余额` 的计价口径。你充值 1 元，就按 1 平台余额使用；模型价格仍参考官方美元价格。
 
