@@ -5,7 +5,7 @@ description: ''
 updated: 2026-08-12T23:50
 ---
 
-软件下载
+## 软件下载
 
 点击 [Claude Desktop下载链接](https://claude.com/download) ，进入下载页面
 
@@ -37,7 +37,7 @@ set HTTPS_PROXY=http://127.0.0.1:7897
 
 正常安装
 
-![](blob:https://docs.juheq.cn/0dd905a6-fd2b-4987-b1ce-737ed2b662e0)
+![](/images/uploads/QQ20260812-235723.jpg)
 
 ## 绕过登录并配置第三方接口
 
@@ -52,7 +52,7 @@ set HTTPS_PROXY=http://127.0.0.1:7897
 
 重启后，左上角菜单会新增 **Developer** 项。点击 **Developer** → **Configure third-party inference** 进入配置页面：
 
-![](blob:https://docs.juheq.cn/dc2ac6a3-efef-4033-906c-107ea3bec2e2)
+![](/images/uploads/QQ20260813-000958.jpg)
 
 在Gateway base URL填入 `https://api.zicc.cc`
 
@@ -68,4 +68,4 @@ Gateway API key请填入生成的 CC分组 的APIKEY
 
 进行愉快的对话吧\~
 
-![](blob:https://docs.juheq.cn/ff54fd29-33eb-4e89-b69c-2be6ebfb9d52)
+![](/images/uploads/QQ20260813-004004.jpg)
