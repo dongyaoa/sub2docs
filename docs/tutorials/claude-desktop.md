@@ -1,5 +1,5 @@
 ---
-title: Claude Desktop桌面端配置第三方api
+title: Claude Desktop桌面端配置
 category: client
 description: ''
 updated: 2026-08-12T23:50
