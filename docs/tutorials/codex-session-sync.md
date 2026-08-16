@@ -1,5 +1,5 @@
 ---
-title: codex-session-sync
+title: Codex客户端切换中转站同步会话教程
 category: kehuduan
 order: 12
 description: 解决 Codex 从官方服务或其他中转站切换后历史会话不显示的问题
