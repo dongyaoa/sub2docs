@@ -6,6 +6,8 @@ description: ''
 updated: 2026-08-12T23:50
 ---
 
+Claude Desktop桌面端手动配置教程，无需下载第三方软件
+
 ## 软件下载
 
 点击 [Claude Desktop下载链接](https://claude.com/download) ，进入下载页面
