@@ -3,12 +3,12 @@ title: CC-Switch接入Codex客户端教程
 category: kehuduan
 order: 10
 description: 使用 sub2api 一键导入 CC-Switch，并在 Codex 官方客户端中生效
-updated: 2026-08-16T14:23
+updated: 2026-08-16T15:13
 ---
 
 本教程面向 Codex 官方客户端用户。sub2api 的一键导入会把供应商配置写入 CC-Switch，再由 CC-Switch 更新 Codex 的本地配置。完成切换后必须彻底退出并重新启动客户端。
 
-> **重要：** 一键导入生成的 `model_provider` 默认通常是 `OpenAI` 或 `customI`，不是 `Z-API`。Base URL 按用户中心显示的地址填写，不需要额外添加 `/v1`。
+> **与手动配置的区别：** 手动方式需要编辑 `config.toml`，CC-Switch 会代为写入和切换供应商配置。已经使用手动配置的用户，建议先备份 `.codex` 目录。
 
 ## 一、下载并安装 Codex 客户端
 
@@ -58,13 +58,13 @@ API Key 通常以 `sk-` 开头。复制时不要带入前后空格，也不要�
 
 | 配置项 | 正确说明 |
 | --- | --- |
-| `model_provider` | 默认通常为 `OpenAI` 或 `customI`，以实际导入结果为准 |
+| `model_provider` | 默认通常为 `OpenAI` 或 `custom`，以实际导入结果为准 |
 | Base URL | 使用用户中心显示的完整地址，不额外添加 `/v1` |
 | API Key | Codex 分组的 API Key |
 | 默认模型 | 选择账号实际可用的模型 |
 | `wire_api` | `responses` |
 
-`model_provider` 必须与配置段名称完全一致。例如值为 `OpenAI` 时，应对应 `model_providers.OpenAI`；值为 `customI` 时，应对应 `model_providers.customI`。不要只修改其中一处。
+`model_provider` 必须与配置段名称完全一致。例如值为 `OpenAI` 时，应对应 `model_providers.OpenAI`；值为 `custom` 时，应对应 `model_providers.custom`。不要只修改其中一处。
 
 ## 五、检查客户端配置
 
@@ -74,8 +74,8 @@ API Key 通常以 `sk-` 开头。复制时不要带入前后空格，也不要�
 
 | 配置项 | 正确值 |
 | --- | --- |
-| `model_provider` | `OpenAI` 或 `customI`，与一键导入结果一致 |
-| 供应商配置段 | `model_providers.OpenAI` 或 `model_providers.customI` |
+| `model_provider` | `OpenAI` 或 `custom`，与一键导入结果一致 |
+| 供应商配置段 | `model_providers.OpenAI` 或 `model_providers.custom` |
 | `base_url` | sub2api 用户中心显示的地址，不添加 `/v1` |
 | `wire_api` | `responses` |
 | `api_key` | 当前 Codex 分组密钥 |
@@ -104,7 +104,7 @@ API Key 通常以 `sk-` 开头。复制时不要带入前后空格，也不要�
 
 ### 修改后提示找不到供应商
 
-检查 `model_provider` 与供应商配置段名称是否一致。`OpenAI` 和 `customI` 区分大小写，不能混用。
+检查 `model_provider` 与供应商配置段名称是否一致。`OpenAI` 和 `custom` 区分大小写，不能混用。
 
 ### CC-Switch 显示使用中，但客户端没有变化
 
