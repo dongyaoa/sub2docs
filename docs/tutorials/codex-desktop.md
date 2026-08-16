@@ -6,6 +6,8 @@ description: 使用 Z-API API Key 登录并配置 Codex 桌面端
 updated: 2026-08-16T12:11
 ---
 
+Codex官方客户端手动配置教程，无需下载其他第三方软件
+
 ## 下载链接
 
 - [Windows 官方下载](https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi)
