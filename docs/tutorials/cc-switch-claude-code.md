@@ -19,14 +19,11 @@ CC-Switch 可以集中管理 Claude Code 的供应商配置。完成设置后，
 - 已安装 Claude Code。
 - CC-Switch 能正常启动。
 
-在终端执行以下命令检查环境：
-
-```bash\nnode --version
-claude --version\n```
+在终端依次执行 `node --version` 和 `claude --version` 检查环境。
 
 如果系统找不到 `claude` 命令，可以先安装官方 CLI：
 
-```bash\nnpm install -g @anthropic-ai/claude-code\n```
+安装命令：`npm install -g @anthropic-ai/claude-code`
 
 ## 二、安装 CC-Switch
 
@@ -38,14 +35,12 @@ claude --version\n```
 | macOS | 推荐使用 Homebrew，执行下方命令。 |
 | Debian / Ubuntu | 下载与处理器架构匹配的 `.deb` 文件，再使用 `apt` 安装。 |
 
-macOS 安装命令：
+macOS 安装步骤：
 
-```bash\nbrew tap farion1231/ccswitch
-brew install --cask cc-switch\n```
+1. 添加软件源：`brew tap farion1231/ccswitch`
+2. 安装 CC-Switch：`brew install --cask cc-switch`
 
-Debian / Ubuntu 安装示例：
-
-```bash\nsudo apt install ./cc-switch_x.x.x_amd64.deb\n```
+Debian / Ubuntu 安装示例：`sudo apt install ./cc-switch_x.x.x_amd64.deb`
 
 请将示例文件名替换为实际下载的版本。其他 Linux 发行版请在 Releases 页面选择对应格式。
 
@@ -94,9 +89,7 @@ Debian / Ubuntu 安装示例：
 
 ## 五、验证配置
 
-在新终端中运行：
-
-```bash\nclaude\n```
+在新终端中运行 `claude`。
 
 进入对话界面后发送一个简单问题。如果能够正常返回结果，说明配置已经生效。
 
