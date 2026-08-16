@@ -1,6 +1,7 @@
 ---
 title: Z-API简介
-category: quick-start
+category: kaishi
+order: 100
 description: Z-API是一家大模型AI中转站
 updated: 2026-08-12T22:35
 ---
