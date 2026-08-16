@@ -1,5 +1,5 @@
 ---
-title: codex-desktop
+title: Codex 桌面端配置教程
 category: kehuduan
 order: 20
 description: 使用 Z-API API Key 登录并配置 Codex 桌面端
@@ -50,7 +50,8 @@ updated: 2026-08-16T12:11
 
 把下面内容复制到 `config.toml` 中。重点是 `base_url` 要填写 Z-API 用户中心「API 密钥」页面显示的 Base URL。配置完成后退出 Codex，再重新启动应用。
 
-```toml\nmodel_provider = "Z-API"
+````toml
+\nmodel_provider = "Z-API"
 model = "gpt-5.5" # 换成你在 Z-API 上实际可用的模型
 model_reasoning_effort = "medium"
 
@@ -88,3 +89,4 @@ api_key = "sk-你的Z-API密钥"\n```
 ## 查询消耗
 
 可在 [Z-API 控制台](https://api.zicc.cc) 查询消耗。
+````
