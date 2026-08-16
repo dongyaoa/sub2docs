@@ -9,8 +9,7 @@ updated: 2026-08-16T12:11
 ## 下载链接
 
 - [Windows 官方下载](https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi)
-- [OpenAI.Codex_26.422.3464.0_x64__2p2nqsd0c76g0.Msix](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/KjsJbxXqBoPVj1xu6aYcCedUnPg?mount_point=docx_file&preview_type=16)
-- [Codex.dmg](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/H2rWbFPiGosnwwxhumDch8m8nLb?mount_point=docx_file&preview_type=16)
+- [MAC官方下载地址](https://chatgpt.com/zh-Hans-CN/download/)
 
 ![Codex 桌面端下载示例](https://img.imgdd.com/5a27141c-ef8e-44f4-8129-e41e6806a604.png)
 
@@ -50,8 +49,8 @@ updated: 2026-08-16T12:11
 
 把下面内容复制到 `config.toml` 中。重点是 `base_url` 要填写 Z-API 用户中心「API 密钥」页面显示的 Base URL。配置完成后退出 Codex，再重新启动应用。
 
-```toml
-model_provider = "Z-API"
+````toml
+\nmodel_provider = "Z-API"
 model = "gpt-5.5" # 换成你在 Z-API 上实际可用的模型
 model_reasoning_effort = "medium"
 
@@ -68,8 +67,7 @@ trust_level = "trusted"
 name = "codex"
 base_url = "https://api.zicc.cc/v1"
 wire_api = "responses"
-api_key = "sk-你的Z-API密钥"
-```
+api_key = "sk-你的Z-API密钥"\n```
 
 如果用户中心显示的 Base URL 与示例不同，请以用户中心为准。
 
@@ -90,3 +88,4 @@ api_key = "sk-你的Z-API密钥"
 ## 查询消耗
 
 可在 [Z-API 控制台](https://api.zicc.cc) 查询消耗。
+````
