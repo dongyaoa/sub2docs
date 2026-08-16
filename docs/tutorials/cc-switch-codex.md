@@ -1,117 +1,109 @@
 ---
-title: CC-Switch接入Codex教程
+title: CC-Switch接入Codex客户端教程
 category: kehuduan
 order: 10
-description: 使用 CC-Switch 管理 Z-API Codex 配置并验证命令行连接
-updated: 2026-08-16T13:29
+description: 使用 CC-Switch 配置 Z-API 并在 Codex 官方客户端中生效
+updated: 2026-08-16T13:50
 ---
 
-CC-Switch 可以集中管理 Codex CLI 的供应商配置。切换供应商后，工具会更新 Codex 的本地配置，适合需要在多个 API 服务之间快速切换的用户。
+本教程面向 Codex 官方客户端用户。CC-Switch 负责管理 Codex 的本地供应商配置，Codex 客户端负责 API Key 登录和日常使用；完成切换后必须彻底退出并重新启动客户端。
 
-> **适用范围：** 本文配置的是 Codex CLI，不是 Codex 桌面端。开始前请退出正在运行的 Codex，避免旧进程继续使用切换前的配置。
+> **与手动配置的区别：** 手动方式需要编辑 `config.toml`，CC-Switch 会代为写入和切换供应商配置。已经使用手动配置的用户，建议先备份 `.codex` 目录。
 
-## 一、准备工作
+## 一、下载并安装 Codex 客户端
 
-开始前请确认以下条件：
+| 系统 | 官方下载地址 |
+| --- | --- |
+| Windows | [Microsoft 安装包](https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi) |
+| macOS | [OpenAI 官方下载页面](https://chatgpt.com/zh-Hans-CN/download/) |
 
-- 已注册 Z-API，并能进入用户中心。
-- 已安装 Node.js 18 或更高版本。
-- 已安装 Codex CLI。
-- CC-Switch 能正常启动。
+安装完成后先启动一次 Codex，让客户端创建本地配置目录。
 
-在终端依次执行 `node --version` 和 `codex --version` 检查环境。
+| 系统 | Codex 配置目录 |
+| --- | --- |
+| Windows | `C:\Users\你的用户名\.codex` |
+| macOS | `~/.codex` |
 
-如果系统找不到 `codex` 命令，可以先安装官方 CLI：
+## 二、创建密钥并登录客户端
 
-安装命令：`npm install -g @openai/codex`
+1. 打开 [Z-API 控制台](https://api.zicc.cc)，进入 **API 密钥** 页面。
+2. 创建或选择 **Codex** 分组的密钥。
+3. 复制 API Key，并记录页面显示的 Base URL 和可用模型。
+4. 如果 Codex 已登录个人账号，先在左下角退出登录。
+5. 在登录界面选择 **API Key**，粘贴 Z-API 密钥并完成登录。
 
-## 二、安装 CC-Switch
+API Key 通常以 `sk-` 开头。复制时不要带入前后空格，也不要把真实密钥写入公开文档或发送给他人。
+
+## 三、安装 CC-Switch
 
 从 [CC-Switch GitHub Releases](https://github.com/farion1231/cc-switch/releases/latest) 下载最新稳定版。
 
 | 系统 | 安装方式 |
 | --- | --- |
 | Windows | 下载普通的 `.msi` 安装包并按提示安装。 |
-| macOS | 推荐使用 Homebrew，执行下方命令。 |
-| Debian / Ubuntu | 下载与处理器架构匹配的 `.deb` 文件，再使用 `apt` 安装。 |
+| macOS | 依次执行 `brew tap farion1231/ccswitch` 和 `brew install --cask cc-switch`。 |
 
-macOS 安装步骤：
+安装后启动 CC-Switch。如果软件提示导入已有 Codex 配置，建议先选择备份，再继续操作。
 
-1. 添加软件源：`brew tap farion1231/ccswitch`
-2. 安装 CC-Switch：`brew install --cask cc-switch`
+## 四、在 CC-Switch 中添加 Z-API
 
-Debian / Ubuntu 安装示例：`sudo apt install ./cc-switch_x.x.x_amd64.deb`
-
-请将示例文件名替换为实际下载的版本。其他 Linux 发行版请在 Releases 页面选择对应格式。
-
-## 三、创建 Z-API 密钥
-
-1. 打开 [Z-API 控制台](https://api.zicc.cc)，进入 **API 密钥** 页面。
-2. 创建或选择 **Codex** 分组的密钥。
-3. 复制 API Key，并记录页面显示的 Base URL。
-
-本文使用以下配置作为示例：
-
-| 配置项 | 示例值 |
-| --- | --- |
-| 分组 | `Codex` |
-| Base URL | `https://api.zicc.cc/v1` |
-| API Key | `sk-你的Z-API密钥` |
-
-> **注意：** Base URL 和可用模型可能随账号配置变化，请以 Z-API 用户中心显示的信息为准。不要把真实 API Key 发送给他人或写入公开文档。
-
-## 四、在 CC-Switch 中添加 Codex 配置
-
-1. 打开 CC-Switch，在顶部工具分组中选择 **Codex**。
-2. 点击添加供应商，选择自定义供应商或可编辑的兼容模板。
-3. 将供应商名称填写为 `Z-API`。
-4. 按下表填写连接信息；不同版本的字段名称可能略有差异。
+1. 完全退出 Codex 客户端，包括仍在后台运行的进程。
+2. 打开 CC-Switch，在顶部工具分组中选择 **Codex**。
+3. 点击添加供应商，选择自定义供应商或可编辑的兼容模板。
+4. 将供应商名称填写为 `Z-API`。
+5. 按下表填写配置；不同 CC-Switch 版本的字段名称可能略有差异。
 
 | CC-Switch 字段 | 填写内容 |
 | --- | --- |
 | 供应商名称 | `Z-API` |
-| Base URL / API URL | Z-API 用户中心显示的 Codex Base URL |
+| Base URL / API URL | Z-API 用户中心显示的地址，示例为 `https://api.zicc.cc/v1` |
 | API Key | Codex 分组的 API Key |
 | 默认模型 | 选择账号实际可用的模型，例如 `gpt-5.5` |
+| Wire API | `responses` |
 
-5. 检查 Base URL 末尾是否包含 `/v1`，确认后点击 **添加**。
-6. 返回供应商列表，在 Z-API 配置右侧点击 **启用**。
-7. 状态显示为 **使用中** 后，关闭原有终端并重新打开一个终端窗口。
+6. 确认 Base URL 末尾包含 `/v1`，然后点击 **添加**。
+7. 返回供应商列表，在 Z-API 配置右侧点击 **启用**。
+8. 状态显示为 **使用中** 后再启动 Codex 客户端。
 
-如果 CC-Switch 提示导入或备份已有配置，建议先备份。Codex 的常见配置目录如下：
+## 五、检查客户端配置
 
-| 系统 | 配置目录 |
+如果客户端仍然使用旧地址，可以在 Codex 左下角进入 **设置**，也可以按 `Ctrl + ,` 打开设置，然后进入 **Configuration** 并打开 `config.toml`。
+
+重点检查以下内容：
+
+| 配置项 | 正确值 |
 | --- | --- |
-| Windows | `C:\Users\你的用户名\.codex` |
-| macOS / Linux | `~/.codex` |
+| `model_provider` | `Z-API` |
+| `base_url` | Z-API 用户中心显示的 Codex Base URL |
+| `wire_api` | `responses` |
+| `api_key` | 当前 Codex 分组密钥 |
+| `model` | 当前账号可用模型 |
 
-## 五、验证配置
+检查完成后关闭配置文件，再彻底退出并重新启动 Codex。不要同时在 CC-Switch 和 `config.toml` 中修改同一项，以免后保存的一方覆盖另一方。
 
-在新终端中运行 `codex`。
+## 六、验证客户端是否可用
 
-进入对话界面后发送一个简单任务。如果能够正常返回结果，说明配置已经生效。
+1. 在 Codex 客户端中新建会话。
+2. 发送一个简单任务，确认能够正常返回结果。
+3. 在 Z-API 控制台查看是否出现对应调用和消耗。
+4. 需要切换模型时，优先选择 Z-API 用户中心明确显示为可用的模型。
 
-建议同时检查以下项目：
+如需切换中文，可在 Codex 左上角依次进入 **File**、**General**、**Language**，选择中文后重启客户端。部分版本切换失败属于客户端问题，不影响使用中文对话。
 
-- CC-Switch 中 Z-API 的状态仍为 **使用中**。
-- 使用的是 Codex 分组密钥，不是 CC 或其他分组密钥。
-- 模型名称存在于 Z-API 用户中心的可用模型列表中。
-- Z-API 控制台中能够看到对应的调用记录和消耗。
-
-## 六、常见问题
+## 七、常见问题
 
 ### 提示 401 或 API Key 无效
 
-重新复制密钥，确认没有多余空格，并检查密钥是否属于 `Codex` 分组。
+重新复制密钥，确认没有多余空格，并检查密钥是否属于 `Codex` 分组。客户端登录密钥与 CC-Switch 中启用的密钥应保持一致。
 
 ### 提示 404 或找不到模型
 
-检查 Base URL 是否完整，Codex 通常需要 `/v1`；同时将模型名称改为账号实际可用的模型。
+检查 Base URL 是否完整并包含 `/v1`，同时将模型改为账号实际可用的模型。
 
-### 切换后仍在使用旧配置
+### CC-Switch 显示使用中，但客户端没有变化
 
-完全退出 Codex 和原终端，再在 CC-Switch 中重新点击 **启用**。如果仍未生效，检查 `.codex` 配置目录是否存在，以及 CC-Switch 是否有写入权限。
+彻底退出 Codex 客户端和后台进程，重新在 CC-Switch 中点击 **启用**，再启动客户端。仍未生效时，检查 `.codex` 目录是否存在以及 CC-Switch 是否有写入权限。
 
-### 需要切换回其他供应商
+### 客户端更新后配置被重置
 
-在 CC-Switch 的 Codex 分组中选择目标供应商并点击 **启用**。切换后重新启动 Codex，避免旧会话继续使用缓存配置。
+重新打开 CC-Switch 并启用 Z-API 配置。重要配置建议定期备份 `.codex` 目录。
