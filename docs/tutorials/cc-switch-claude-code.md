@@ -1,5 +1,5 @@
 ---
-title: cc-switch-claude-code
+title: CC-Switch接入Claude code教程
 category: kehuduan
 order: 11
 description: 使用 CC-Switch 管理 Z-API Claude Code 配置并完成连接验证
@@ -21,16 +21,12 @@ CC-Switch 可以集中管理 Claude Code 的供应商配置。完成设置后，
 
 在终端执行以下命令检查环境：
 
-```bash
-node --version
-claude --version
-```
+```bash\nnode --version
+claude --version\n```
 
 如果系统找不到 `claude` 命令，可以先安装官方 CLI：
 
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+```bash\nnpm install -g @anthropic-ai/claude-code\n```
 
 ## 二、安装 CC-Switch
 
@@ -44,16 +40,12 @@ npm install -g @anthropic-ai/claude-code
 
 macOS 安装命令：
 
-```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
-```
+```bash\nbrew tap farion1231/ccswitch
+brew install --cask cc-switch\n```
 
 Debian / Ubuntu 安装示例：
 
-```bash
-sudo apt install ./cc-switch_x.x.x_amd64.deb
-```
+```bash\nsudo apt install ./cc-switch_x.x.x_amd64.deb\n```
 
 请将示例文件名替换为实际下载的版本。其他 Linux 发行版请在 Releases 页面选择对应格式。
 
@@ -104,9 +96,7 @@ sudo apt install ./cc-switch_x.x.x_amd64.deb
 
 在新终端中运行：
 
-```bash
-claude
-```
+```bash\nclaude\n```
 
 进入对话界面后发送一个简单问题。如果能够正常返回结果，说明配置已经生效。
 
