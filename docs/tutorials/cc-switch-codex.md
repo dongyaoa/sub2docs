@@ -1,5 +1,5 @@
 ---
-title: cc-switch-codex
+title: CC-Switch接入Codex教程
 category: kehuduan
 order: 10
 description: 使用 CC-Switch 管理 Z-API Codex 配置并验证命令行连接
@@ -21,16 +21,12 @@ CC-Switch 可以集中管理 Codex CLI 的供应商配置。切换供应商后�
 
 在终端执行以下命令检查环境：
 
-```bash
-node --version
-codex --version
-```
+```bash\nnode --version
+codex --version\n```
 
 如果系统找不到 `codex` 命令，可以先安装官方 CLI：
 
-```bash
-npm install -g @openai/codex
-```
+```bash\nnpm install -g @openai/codex\n```
 
 ## 二、安装 CC-Switch
 
@@ -44,16 +40,12 @@ npm install -g @openai/codex
 
 macOS 安装命令：
 
-```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
-```
+```bash\nbrew tap farion1231/ccswitch
+brew install --cask cc-switch\n```
 
 Debian / Ubuntu 安装示例：
 
-```bash
-sudo apt install ./cc-switch_x.x.x_amd64.deb
-```
+```bash\nsudo apt install ./cc-switch_x.x.x_amd64.deb\n```
 
 请将示例文件名替换为实际下载的版本。其他 Linux 发行版请在 Releases 页面选择对应格式。
 
@@ -102,9 +94,7 @@ sudo apt install ./cc-switch_x.x.x_amd64.deb
 
 在新终端中运行：
 
-```bash
-codex
-```
+```bash\ncodex\n```
 
 进入对话界面后发送一个简单任务。如果能够正常返回结果，说明配置已经生效。
 
