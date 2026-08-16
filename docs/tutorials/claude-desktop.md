@@ -1,7 +1,7 @@
 ---
 title: Claude Desktop桌面端配置
 category: kehuduan
-order: 100
+order: 1
 description: ''
 updated: 2026-08-12T23:50
 ---
@@ -28,7 +28,8 @@ Windows系统下软件安装需要请求Anthropic官方，需要你用梯子挂 
 
 在命令行中分别输入以下命令，运行安装程序，此时能够正常安装
 
-```plain\nset HTTP_PROXY=http://127.0.0.1:7897
+````plain
+\nset HTTP_PROXY=http://127.0.0.1:7897
 set HTTPS_PROXY=http://127.0.0.1:7897
 "Claude Setup.exe"\n```
 
@@ -68,3 +69,4 @@ Gateway API key请填入生成的 CC分组 的APIKEY
 进行愉快的对话吧\~
 
 ![](/images/uploads/QQ20260813-004004.jpg)
+````
