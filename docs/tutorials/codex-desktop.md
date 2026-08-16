@@ -50,8 +50,8 @@ updated: 2026-08-16T12:11
 
 把下面内容复制到 `config.toml` 中。重点是 `base_url` 要填写 Z-API 用户中心「API 密钥」页面显示的 Base URL。配置完成后退出 Codex，再重新启动应用。
 
-````toml
-\nmodel_provider = "Z-API"
+```toml
+model_provider = "Z-API"
 model = "gpt-5.5" # 换成你在 Z-API 上实际可用的模型
 model_reasoning_effort = "medium"
 
@@ -68,7 +68,8 @@ trust_level = "trusted"
 name = "codex"
 base_url = "https://api.zicc.cc/v1"
 wire_api = "responses"
-api_key = "sk-你的Z-API密钥"\n```
+api_key = "sk-你的Z-API密钥"
+```
 
 如果用户中心显示的 Base URL 与示例不同，请以用户中心为准。
 
@@ -89,4 +90,3 @@ api_key = "sk-你的Z-API密钥"\n```
 ## 查询消耗
 
 可在 [Z-API 控制台](https://api.zicc.cc) 查询消耗。
-````
