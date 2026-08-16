@@ -19,18 +19,11 @@ CC-Switch 可以集中管理 Codex CLI 的供应商配置。切换供应商后�
 - 已安装 Codex CLI。
 - CC-Switch 能正常启动。
 
-在终端执行以下命令检查环境：
-
-```bash
-node --version
-codex --version
-```
+在终端依次执行 `node --version` 和 `codex --version` 检查环境。
 
 如果系统找不到 `codex` 命令，可以先安装官方 CLI：
 
-```bash
-npm install -g @openai/codex
-```
+安装命令：`npm install -g @openai/codex`
 
 ## 二、安装 CC-Switch
 
@@ -42,18 +35,12 @@ npm install -g @openai/codex
 | macOS | 推荐使用 Homebrew，执行下方命令。 |
 | Debian / Ubuntu | 下载与处理器架构匹配的 `.deb` 文件，再使用 `apt` 安装。 |
 
-macOS 安装命令：
+macOS 安装步骤：
 
-```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
-```
+1. 添加软件源：`brew tap farion1231/ccswitch`
+2. 安装 CC-Switch：`brew install --cask cc-switch`
 
-Debian / Ubuntu 安装示例：
-
-```bash
-sudo apt install ./cc-switch_x.x.x_amd64.deb
-```
+Debian / Ubuntu 安装示例：`sudo apt install ./cc-switch_x.x.x_amd64.deb`
 
 请将示例文件名替换为实际下载的版本。其他 Linux 发行版请在 Releases 页面选择对应格式。
 
@@ -100,11 +87,7 @@ sudo apt install ./cc-switch_x.x.x_amd64.deb
 
 ## 五、验证配置
 
-在新终端中运行：
-
-```bash
-codex
-```
+在新终端中运行 `codex`。
 
 进入对话界面后发送一个简单任务。如果能够正常返回结果，说明配置已经生效。
 
